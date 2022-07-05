@@ -1,0 +1,55 @@
+procedimento jogar()
+inicio
+   x <- "X"
+   vencedor <- falso
+   contJogada <- 0
+   repita
+      escreval()
+      escreva("< Sua vez >--->> | ", x, " |: ")
+      leia(op)
+      se (op > 0) e (op < 10) entao
+         se (op > 0) e (op < 4) entao
+            l <- 1
+            se (matJogo[l, op] = "X") ou (matJogo[l, op] = "O") entao
+               escreval()
+               escreval("< ERRO! Espaço preenchido. >--->>")
+            senao
+                 matJogo[l, op] <- x
+                 codRep()
+            fimse
+         senao
+              se (op > 3) e (op < 7) entao
+                 l <- 2
+                 se (matJogo[l, op-3] = "X") ou (matJogo[l, op-3] = "O") entao
+                    escreval()
+                    escreval("< ERRO! Espaço preenchido. >--->>")
+                 senao
+                      matJogo[l, op-3] <- x
+                      codRep()
+                 fimse
+              senao
+                   l <- 3
+                   se (matJogo[l, op-6] = "X") ou (matJogo[l, op-6] = "O") entao
+                      escreval()
+                      escreval("< ERRO! Espaço preenchido. >--->>")
+                   senao
+                        matJogo[l, op-6] <- x
+                        codRep()
+                   fimse
+              fimse
+         fimse
+      senao
+           escreval()
+           escreval("< ERRO! Jogada inválida. >--->>")
+      fimse
+      limpatela
+      exibirTabuleiro()
+   ate (contJogada = 9) ou (vencedor = verdadeiro)
+   se (vencedor = verdadeiro) entao
+      escreval()
+      escreval("Jogador ", x, " venceu! ")
+   senao
+        escreval()
+        escreval("Deu Velha!")
+   fimse
+fimprocedimento

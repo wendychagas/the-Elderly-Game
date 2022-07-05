@@ -1,0 +1,21 @@
+procedimento exibirTabuleiro()
+inicio
+      escreval("_____________________")
+      escreval("<<<---<... ...>--->>>")
+      escreval()
+      escreval(" the Elderly Game I ")
+      escreval("_____________________")
+      escreval("<<<---<... ...>--->>>")
+      escreval()
+      escreval("+-----+-----+-----+")
+      para i <- 1 ate 3 faca
+          para j <- 1 ate 3 faca
+               escreva("|  ")
+               escreva(matJogo[i, j]:3)
+          fimpara
+          escreval("|")
+          escreval("+-----+-----+-----+")
+      fimpara
+      escreval("____________________")
+      escreval()
+fimprocedimento

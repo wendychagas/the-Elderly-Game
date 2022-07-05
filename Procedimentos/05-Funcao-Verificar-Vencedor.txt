@@ -1,0 +1,36 @@
+funcao verificarVencedor(): Logico
+var
+   venceu: Logico
+inicio
+      venceu <- falso
+
+      //horizontal;
+      para i <- 1 ate 3 faca
+           se ((matJogo[i,1] = matJogo[i,2]) e (matJogo[i,2] = matJogo[i,3])) entao
+              venceu <- verdadeiro
+           fimse
+      fimpara
+
+      //vertical;
+      para i <- 1 ate 3 faca
+           se ((matJogo[1,i] = matJogo[2,i]) e (matJogo[2,i] = matJogo[3,i])) entao
+              venceu <- verdadeiro
+           fimse
+      fimpara
+
+      //diagonal 1;
+      para i <- 1 ate 3 faca
+           se ((matJogo[1,1] = matJogo[2,2]) e (matJogo[2,2] = matJogo[3,3])) entao
+              venceu <- verdadeiro
+           fimse
+      fimpara
+
+      //diagonal 2;
+      para i <- 1 ate 3 faca
+           se ((matJogo[1,3] = matJogo[2,2]) e (matJogo[2,2] = matJogo[3,1])) entao
+              venceu <- verdadeiro
+           fimse
+      fimpara
+
+      retorne venceu
+fimfuncao
